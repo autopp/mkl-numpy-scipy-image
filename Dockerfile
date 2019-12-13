@@ -1,5 +1,7 @@
 FROM python:3.8.0
 
+WORKDIR /app
+ADD Pipfile Pipfile.lock ./
 RUN wget -O /tmp/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB &&\
 apt-key add /tmp/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB &&\
 rm /tmp/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB &&\
